@@ -323,8 +323,6 @@ Java_sun_awt_wl_WLSubSurface_nativeDestroyWlSubSurface
     ASSERT_ON_WL_THREAD(env);
     struct wl_subsurface* subSurface = jlong_to_ptr(subSurfacePtr);
     wl_subsurface_destroy(subSurface);
-    // TODO: once it's all done on EDT, flush-to-server will not be necessary
-    wlFlushToServer(env);
 }
 
 JNIEXPORT void JNICALL
