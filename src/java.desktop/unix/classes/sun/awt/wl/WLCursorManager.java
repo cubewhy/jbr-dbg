@@ -122,8 +122,7 @@ public class WLCursorManager {
                 }
                 AWTAccessor.getCursorAccessor().setPData(cursor, scale, pData);
             }
-            long finalPData = pData;
-            WLToolkit.performOnWLThread(() -> nativeSetCursor(finalPData, scale, serial));
+            nativeSetCursor(pData, scale, serial);
         }
     }
 
